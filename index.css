@@ -1,54 +1,146 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    color: #ffeeee;
-    background-color: #F5F5F5;
+    background-color: #C9DABF;
 }
 
 header {
-    left: 0;
-    top: 0;
-    background-color: #006e62;
-    padding: 7px;
+    text-align: center;
+    background-color: #9CA989;
+    padding: 10px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: auto;
     
+    color: #253029;
+    & h1 {
+        text-align: center;
+    }
 }
 
 footer {
-    background-color: #003366;
+    background-color: #C9DABF;
 }
 
-table {
-    border: 2px solid white;
-    border-collapse: collapse;
-    border-spacing: 0;
+#bp-section {
     text-align: center;
-    font-weight: bold;
+    width: fit-content;
+    margin: 10px auto;
+    text-wrap: wrap;
+    background-color: #9CA986;
+    padding: 20px;
+    border-radius: 10px;
+    & .bp-text {
+        vertical-align: top;
+        color: black;
+        font-weight: bold;
+        display: inline-block;
+        background-color: #C9DABF;
+        max-width: fit-content;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 0 10px;
+        & h1 {
+            text-decoration: underline;
+            font-size: xx-large;
+            text-align: left;
+            margin: 15px 10px;
+            background-color: #f3b610;
+        }
+        & p {
+            background-color: #9a1b22;
+            text-align: left;
+            line-height: 25px;
+            text-wrap: wrap;
+            max-width: 530px;
+            margin: 15px 10px;
+        }
+    }
+    & table {
+        display: inline-block;
+        border: transparent;
+        border-spacing: 0;
+        text-align: center;
+        font-weight: bold;
+        vertical-align: top;
+        & .row0 {
+            background-color: #4f5052;
+            color: white;
+        }
+        & .row1 {
+            background-color: #a7cd39;
+            color: black;
+        }
+        & .row2 {
+            background-color: #f9e802;
+            color: black;
+        }
+        & .row3 {
+            background-color: #f3b610;
+            color: black;
+        }
+        & .row4 {
+            background-color: #b94723;
+            color: white;
+        }
+        & .row5 {
+            background-color: #9a1b22;
+            color: white;
+        }
+        & th, td {
+            border: 2px solid black;
+            padding: 10px 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    }
+    & #bp-form {
+        padding: 10px;
+        margin: 5px;
+        & label {
+            color: black;
+            font-weight: bold;
+        }
+        & input {
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+    }
 }
 
-.row0 {
-    background-color: #4f5052;
-    color: white;
-}
-.row1 {
-    background-color: #a7cd39;
-    color: black;
-}
-.row2 {
-    background-color: #f9e802;
-    color: black;
-}
-.row3 {
-    background-color: #f3b610;
-    color: black;
-}
-.row4 {
-    background-color: #b94723;
-    color: white;
-}
-.row5 {
-    background-color: #9a1b22;
-}
-
-th, td {
-    border: 2px solid white;
-    padding: 10px 10px;
+.input-box {
+    text-align: center;
+    & form {
+        background-color: #9CA986;
+        display: inline-block;
+        padding: 10px;
+        text-wrap: nowrap;
+        box-sizing:border-box;
+        width: 30%;
+        min-width: fit-content;
+        border-radius: 10px;
+        margin: 5px;
+        & label {
+            color: black;
+            font-weight: bold;
+        }
+        & input {
+            width: 12%;
+            padding: 16px 20px;
+            margin: 8px 0;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-weight: bolder;
+        }
+        & #height-form {
+            display: inline-block;
+            text-align: center;
+        }
+        & #weight-form {
+            display: inline-block;
+            text-align: center;
+        }
+    }
 }
