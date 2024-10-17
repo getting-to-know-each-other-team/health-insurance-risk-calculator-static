@@ -144,3 +144,8 @@ footer {
         }
     }
 }
+#server-status {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+  }
