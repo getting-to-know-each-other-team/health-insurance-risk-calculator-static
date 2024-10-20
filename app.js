@@ -30,7 +30,7 @@ async function calculateBmi() {
     let weight = document.getElementById("pounds").value;
 
     // calls the server API to calculate the bmi
-    const fetchString = url + "/calculate-bmi?feet="+heightFeet+"&inches="+heightInches+"&weight="+weight;
+    const fetchString = url + "/calculate-bmi?feet="+heightFeet+"&inches="+heightInches+"&lbs="+weight;
     const response = await fetch(fetchString)
     const responseText = await response.text()
 
