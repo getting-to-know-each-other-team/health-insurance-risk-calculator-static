@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Risk Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+<!--The top box on the page.-->
+<header>
+    <h1>Health Insurance Risk Calculator</h1>
+</header> 
+
+<!--The box that contains the bp-text box, table, and blood pressure input forms-->
+<section id="bp-section">
+    <!--Breif explanation of blood pressure / systolic and diastolic-->
+    <div class="bp-text">
+        <h1>Blood Pressure</h1>
+        <p>Blood Pressure measures the force exerted on your artery Blood Pressure measures the force exe</p>
+    </div>
+    <!--Table with all categories of blood pressure-->
+    <table>
+        <!--Gray row on table-->
+        <tr class="row0">
+            <th>Blood Pressure Category</th>
+            <th>Systolic mm Hg<br>(Upper number)</th>
+            <th>  </th>
+            <th>Diastolic mm Hg<br>(Lower number)</th>
+        </tr>
+        <!--Green row on table-->
+        <tr class="row1">
+            <td>Normal</td>
+            <td>Less Than 120</td>
+            <td>and</td>
+            <td>Less Than 80</td>
+        </tr>
+        <!--Yellow row on table-->
+        <tr class="row2">
+            <td>Elevated</td>
+            <td>120 - 129</td>
+            <td>and</td>
+            <td>Less Than 80</td>
+        </tr>
+        <!--Orange row on table-->
+        <tr class="row3">
+            <td>High Blood Pressure<br>(Hypertension) Stage 1</td>
+            <td>130 - 139</td>
+            <td>or</td>
+            <td>80 - 89</td>
+        </tr>
+        <!--Dark orange row on table-->
+        <tr class="row4">
+            <td>High Blood Pressure<br>(Hypertension) Stage 2</td>
+            <td>140 or Higher</td>
+            <td>or</td>
+            <td>90 or Higher</td>
+        </tr>
+        <!--Red row on table-->
+        <tr class="row5">
+            <td>Hypertensive Crisis<br>(Seek help immediately)</td>
+            <td>Higher than 180</td>
+            <td>and/or</td>
+            <td>Higher Than 120</td>
+        </tr>
+    </table>
+    <!--Systolic/Diastolic input forms below both the text and table boxes-->
+    <form id="bp-form">
+        <label>Please measure your blood pressure and input your results here.</label><br>
+        <input type="text" id="systolic" placeholder="Systolic">
+        <input type="text" id="diastolic" placeholder="Diastolic">
+    </form>
+</section>
+
+<!--div input-box contains both height and weight input forms-->
+<div class="input-box">
+<form>
+    <!--Separated height-form and weight-form to make it easier to differentiate later-->
+    <div id="height-form">
+        <label>What is your height in Feet and Inches?</label><br>
+        <input type="text" id="feet" placeholder="Feet">
+        <input type="text" id="inches" placeholder="Inches">
+    </div>
+</form>
+
+<form>
+    <div id="weight-form">
+        <label>What is your weight in Pounds?</label><br>
+        <input type="text" id="pounds" placeholder="lbs.">
+    </div>
+</form>
+</div>
+
+<!--temporary message to check if the ping api is working-->
+<div id="server-status"></div>
+
+<!--very bottom team mark-->
+<footer>Fat Doinks - 2024</footer>
+<script src="app.js"></script>
+</body>
+</html>
