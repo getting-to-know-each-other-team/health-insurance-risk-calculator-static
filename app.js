@@ -4,16 +4,13 @@ const url = "https://health-insurance-calculator-hqgthkfhb5cxgwcz.centralus-01.a
 
 // Function to ping the server and check if it's awake
 async function pingServer() {
-   const response = await fetch(url)
-      .then(response => response.json())
-      .then(data => {
-          document.getElementById('server-status').innerHTML = `Server Status: ${data.message}`;
-          console.log('Ping successful:', data.message);
-      })
-      .catch(error => {
-          document.getElementById('server-status').innerHTML = 'Server Status: Ping failed. Server might be down.';
-          console.error('Ping error:', error);
-      });
+    try {
+        const response = await fetch(url + "/ping")
+        const data = await response.text();
+        console.log('Ping response: ', data);
+    } catch (error) {
+        console.error('Failed to ping the server: ', error)
+    }
 }
 
 // Automatically ping the server when the page loads
