@@ -18,7 +18,12 @@
     <!--Breif explanation of blood pressure / systolic and diastolic-->
     <div class="bp-text">
         <h1>Blood Pressure</h1>
-        <p>Blood Pressure measures the force exerted on your artery Blood Pressure measures the force exe</p>
+        <p>Blood Pressure measures the force exerted on the walls of blood vessels by circulating blood. It is measured by using two numbers: Systolic (Upper number) and Diastolic (Lower number).
+            <br><br>Keeping your blood pressure in a healthy range is important to avoid health risks such as 
+            heart disease and strokes.
+            <br><br>Please record your blood pressure using a sphygomomanometer (blood pressure monitor), and
+            input the Systolic and Diastolic values in the appropriate boxes below.
+        </p>
     </div>
     <!--Table with all categories of blood pressure-->
     <table>
@@ -75,28 +80,61 @@
 
 <!--div input-box contains both height and weight input forms-->
 <div class="input-box">
-<form>
-    <!--Separated height-form and weight-form to make it easier to differentiate later-->
-    <div id="height-form">
-        <label>What is your height in Feet and Inches?</label><br>
-        <input type="text" id="feet" placeholder="Feet">
-        <input type="text" id="inches" placeholder="Inches">
-    </div>
-</form>
-
-<form>
-    <div id="weight-form">
-        <label>What is your weight in Pounds?</label><br>
-        <input type="text" id="pounds" placeholder="lbs.">
-    </div>
-</form>
+    <form>
+        <!--Separated height-form, weight-form, age-form to make it easier to differentiate later-->
+        <div id="height-form">
+            <label>What is your height in Feet and Inches?</label><br>
+            <input type="text" id="feet" placeholder="Feet">
+            <input type="text" id="inches" placeholder="Inches">
+        </div>
+        <div id="weight-form">
+            <label>What is your weight in Pounds?</label><br>
+            <input type="text" id="pounds" placeholder="lbs.">
+        </div>
+        <div id="bmi-calc-button">
+            <button type="button" id="calculate-bmi">Calculate BMI</button>
+        </div>
+    </form><br>
 </div>
 
-<!--temporary message to check if the ping api is working-->
-<div id="server-status"></div>
+<div class="input-box2">
+    <form>
+        <div id="age-form">
+            <label>How old are you in years?</label><br>
+            <input type="text" id="age" placeholder="Age">
+        </div>
+    </form>
+    <div id="diabetes-form">
+        <label>Do you have Diabetes?</label><br>
+        <select name="diabetes" id="diabetes-select">
+            <option value="">-Please select an option-</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+        <div id="cancer-form">
+        <label>Do you have Cancer?</label><br>
+        <select name="cancer" id="cancer-select">
+            <option value="">-Please select an option-</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+    <div id="alzheimers-form">
+        <label>Do you have Alzheimer's?</label><br>
+        <select name="alzheimers" id="alzheimers-select">
+            <option value="">-Please select an option</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+</div>
+<br>
+<div id="overall-health-button">
+    <button type="button" id="overall-health">Calculate Overall Health</button>
+</div>
 
 <!--very bottom team mark-->
 <footer>Fat Doinks - 2024</footer>
-<script src="app.js"></script>
 </body>
 </html>

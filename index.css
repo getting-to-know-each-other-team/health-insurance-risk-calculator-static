@@ -1,6 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #C9DABF;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -17,13 +19,9 @@ header {
     }
 }
 
-footer {
-    background-color: #C9DABF;
-}
-
 #bp-section {
     text-align: center;
-    width: fit-content;
+    max-width: fit-content;
     margin: 10px auto;
     text-wrap: wrap;
     background-color: #9CA986;
@@ -44,10 +42,8 @@ footer {
             font-size: xx-large;
             text-align: left;
             margin: 15px 10px;
-            background-color: #f3b610;
         }
         & p {
-            background-color: #9a1b22;
             text-align: left;
             line-height: 25px;
             text-wrap: wrap;
@@ -56,8 +52,11 @@ footer {
         }
     }
     & table {
+        background-color: #C9DABF;
+        padding: 10px;
+        border-radius: 10px;
         display: inline-block;
-        border: transparent;
+        border: #C9DABF;
         border-spacing: 0;
         text-align: center;
         font-weight: bold;
@@ -118,34 +117,105 @@ footer {
         padding: 10px;
         text-wrap: nowrap;
         box-sizing:border-box;
-        width: 30%;
         min-width: fit-content;
         border-radius: 10px;
-        margin: 5px;
+        margin: 2px;
         & label {
             color: black;
             font-weight: bold;
         }
         & input {
-            width: 12%;
+            width: 20%;
             padding: 16px 20px;
-            margin: 8px 0;
+            margin: 5px 0;
             border: 2px solid black;
             border-radius: 5px;
             font-weight: bolder;
         }
-        & #height-form {
+        & #height-form, & #weight-form {
             display: inline-block;
             text-align: center;
         }
-        & #weight-form {
-            display: inline-block;
+        & #bmi-calc-button {
             text-align: center;
+            margin: 10px;
+            & #calculate-bmi {
+                padding: 16px 20px;
+                margin: 8px;
+                border: 2px solid black;
+                border-radius: 5px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+        }
+        & #bmi-calc-button button:hover {
+            background-color: #C9DABF;
         }
     }
 }
+
+.input-box2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    & label {
+        font-weight: bold;
+    }
+    & form, & #diabetes-form, & #cancer-form, & #alzheimers-form {
+        display: inline-block;
+        background-color: #9CA986;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 10px;
+        text-align: center;
+        vertical-align: top;
+    }
+    & select, & input {
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: 2px solid black;
+        font-weight: bolder;
+        border-radius: 5px;
+    }
+}
+
+#overall-health-button {
+    max-width: fit-content;
+    margin: auto;
+    background-color: #9CA986;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    & #overall-health {
+        padding: 16px 20px;
+        margin: 8px;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    & #overall-health button:hover {
+        background-color: #C9DABF;
+    }
+}
+
+footer {
+    display: inline-flex;
+    justify-content: left;
+    background-color: #9CA986;
+    margin-top: auto;
+    margin: 8px;
+    max-width: fit-content;
+    padding: 10px;
+    font-weight: bolder;
+}
+
 #server-status {
     margin-top: 20px;
     font-size: 18px;
     color: #333;
-  }
+}
