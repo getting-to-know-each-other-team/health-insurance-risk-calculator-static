@@ -32,16 +32,57 @@ async function calculateBmi() {
     // calls the server API to calculate the bmi
     const fetchString = url + "/calculate-bmi?feet="+heightFeet+"&inches="+heightInches+"&lbs="+weight;
     const response = await fetch(fetchString)
-    const responseText = await response.text()
+    const responseText = await response.json()
 
     // this will then display the value of the bmi in the html 
-    document.getElementById("bmiResults").innerHTML = responseText
+    document.getElementById("bmiResults").innerHTML = responseText.bmiResult
 }
 
 async function calculateInsurancePoints() {
     // gets the values from the input html elements
     let systolic = document.getElementById("systolic").value;
     let diastolic = document.getElementById("diastolic").value;
+    let age = document.getElementById("age").value;
+    let diabetes = document.getElementById("diabetes-select").value;
+    let cancer = document.getElementById("cancer-select").value;
+    let alzheimers = document.getElementById("alzheimers-select").value;
 
-    
+    // numeric variable values for the diabetes, cancer, and alzheimers
+    let diabetesNum, cancerNum, alzheimersNum;
+
+    // set number values for the diabetes, cancer, and alzheimers
+    if (diabetes == "yes") {
+        diabetesNum = 10;
+    } else {
+        diabetesNum = 0;
+    }
+
+    if (cancer == "yes") {
+        cancerNum = 10;
+    } else {
+        cancerNum = 0;
+    }
+
+    if (alzheimers == "yes") {
+        alzheimersNum = 10;
+    } else {
+        alzheimersNum = 0;
+    }
+
+    // create a variable to hold the JSON data
+    const jsonData = {
+        systolic : systolic,
+        diastolic: diastolic,
+        age: age,
+        diabetes: diabetesNum,
+        cancer: cancerNum,
+        alzheimers: alzheimersNum
+    }
+
+    // this will send the JSON data to the server
+    fetch(url, {
+        method: 'POST',
+        header: {'Content-Type': 'application/json'},
+        body: JSON.stringify(jsonData),
+    }).then(response => response.json())
 }
