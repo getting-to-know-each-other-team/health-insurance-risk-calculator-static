@@ -1,10 +1,10 @@
 // declare constant variable to hold the website link 
-const url = "health-insurance-risk-calculator-nodejs-dpbgb6dsgpadajaj.centralus-01.azurewebsites.net"
+const url = "https://health-insurance-calculator-hqgthkfhb5cxgwcz.centralus-01.azurewebsites.net"
 // const url = "http://localhost:3000"
 
 // Function to ping the server and check if it's awake
-function pingServer() {
-  fetch('http://localhost:3000/ping')
+async function pingServer() {
+   const response = await fetch(url)
       .then(response => response.json())
       .then(data => {
           document.getElementById('server-status').innerHTML = `Server Status: ${data.message}`;
