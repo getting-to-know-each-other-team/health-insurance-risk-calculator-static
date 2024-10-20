@@ -48,7 +48,17 @@ async function calculateInsurancePoints() {
     let alzheimers = document.getElementById("alzheimers-select").value;
 
     // numeric variable values for the diabetes, cancer, and alzheimers
-    let diabetesNum, cancerNum, alzheimersNum;
+    let ageNum, diabetesNum, cancerNum, alzheimersNum;
+
+    if (age < 30) {
+        ageNum = 0;
+    } else if (age >= 30 && age < 45) {
+        ageNum = 10;
+    } else if (age >= 46 && age < 60) {
+        ageNum = 20;
+    } else {
+        ageNum = 30;
+    }
 
     // set number values for the diabetes, cancer, and alzheimers
     if (diabetes == "yes") {
@@ -73,7 +83,7 @@ async function calculateInsurancePoints() {
     const jsonData = {
         systolic : systolic,
         diastolic: diastolic,
-        age: age,
+        age: ageNum,
         diabetes: diabetesNum,
         cancer: cancerNum,
         alzheimers: alzheimersNum
