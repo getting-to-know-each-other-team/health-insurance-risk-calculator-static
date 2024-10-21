@@ -89,22 +89,32 @@ async function calculateInsurancePoints() {
     // this will send the JSON data to the server
     fetch(url, {
         method: 'POST',
-        header: {'Content-Type': 'application/json'},
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(jsonData)
-    }).then(response => response.json()).then(jsonData => {
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        return response.json()
+    })
+    then(jsonData => {
+        const overallPoints = jsonData.overallPoints
         if (jsonData.overallPoints <= 20) {
             document.getElementById('overall-health-results').innerHTML = 
-            `Your health insurance points: ${jsonData.overallPoints}\nYou are at low risk.`
+            `Your health insurance points: ${overallPoints}\nYou are at low risk.`
         } else if (jsonData.overallPoints <= 50) {
             document.getElementById('overall-health-results').innerHTML = 
-            `Your health insurance points: ${jsonData.overallPoints}\nYou are at moderate risk.`
+            `Your health insurance points: ${overallPoints}\nYou are at moderate risk.`
         } else if (jsonData.overallPoints <= 75) {
             document.getElementById('overall-health-results').innerHTML = 
-            `Your health insurance points: ${jsonData.overallPoints}\nYou are at high risk.`
+            `Your health insurance points: ${overallPoints}\nYou are at high risk.`
         } else {
             document.getElementById('overall-health-results').innerHTML = 
-            `Your health insurance points: ${jsonData.overallPoints}\nYou are Uninsurable.`
+            `Your health insurance points: ${overallPoints}\nYou are Uninsurable.`
         }
+    }).catch(error => {
+        console.error('Error: ', error)
     })
 
     // const response = await fetch(url)
