@@ -14,7 +14,7 @@ async function pingServer() {
 }
 
 // Automatically ping the server when the page loads
-window.onload = pingServer();
+window.onload = pingServer;
 
 /* This method will calculate the BMI when the user presses a button.  It will pass the 3 values
  that were entered by the user to the API server and then the server will take those and return 
@@ -32,7 +32,7 @@ async function calculateBmi() {
     const responseText = await response.json()
 
     // this will then display the value of the bmi in the html 
-    document.getElementById("button-results-bmi").innerHTML = responseText.bmiResult
+    document.getElementById("button-results-bmi").value = responseText.bmiResult
 }
 
 async function calculateInsurancePoints() {
