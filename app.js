@@ -101,16 +101,16 @@ async function calculateInsurancePoints() {
     .then(jsonData => {
         const overallPoints = jsonData.overallPoints
         if (jsonData.overallPoints <= 20) {
-            document.getElementById('overall-health-results').innerHTML = 
+            document.getElementById('overall-health-results').value = 
             `Your health insurance points: ${overallPoints}\nYou are at low risk.`
         } else if (jsonData.overallPoints <= 50) {
-            document.getElementById('overall-health-results').innerHTML = 
+            document.getElementById('overall-health-results').value = 
             `Your health insurance points: ${overallPoints}\nYou are at moderate risk.`
         } else if (jsonData.overallPoints <= 75) {
-            document.getElementById('overall-health-results').innerHTML = 
+            document.getElementById('overall-health-results').value = 
             `Your health insurance points: ${overallPoints}\nYou are at high risk.`
         } else {
-            document.getElementById('overall-health-results').innerHTML = 
+            document.getElementById('overall-health-results').value = 
             `Your health insurance points: ${overallPoints}\nYou are Uninsurable.`
         }
     }).catch(error => {
