@@ -87,7 +87,7 @@ async function calculateInsurancePoints() {
     }
 
     // this will send the JSON data to the server
-    const response = await fetch(url + "/calculate-health-insurnace-risk", {
+    const response = await fetch(url + "/calculate-health-insurance-risk", {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(jsonData)
