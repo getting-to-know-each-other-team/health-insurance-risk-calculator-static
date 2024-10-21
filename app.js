@@ -32,7 +32,7 @@ async function calculateBmi() {
     const responseText = await response.json()
 
     // this will then display the value of the bmi in the html 
-    document.getElementById("bmiResults").innerHTML = responseText.bmiResult
+    document.getElementById("bmiResults").innerHTML = format(responseText.bmiResult, 2)
 }
 
 async function calculateInsurancePoints() {
@@ -92,4 +92,23 @@ async function calculateInsurancePoints() {
         header: {'Content-Type': 'application/json'},
         body: JSON.stringify(jsonData),
     }).then(response => response.json())
+    .then(jsonData => {
+        if (jsonData.overallPoints <= 20) {
+            document.getElementById('overall-health-results').innerHTML = 
+            `Your health insurance points: ${jsonData.overallPoints}\nYou are at low risk.`
+        } else if (jsonData.overallPoints <= 50) {
+            document.getElementById('overall-health-results').innerHTML = 
+            `Your health insurance points: ${jsonData.overallPoints}\nYou are at moderate risk.`
+        } else if (jsonData.overallPoints <= 75) {
+            document.getElementById('overall-health-results').innerHTML = 
+            `Your health insurance points: ${jsonData.overallPoints}\nYou are at high risk.`
+        } else {
+            document.getElementById('overall-health-results').innerHTML = 
+            `Your health insurance points: ${jsonData.overallPoints}\nYou are Uninsurable.`
+        }
+    })
+
+    // const response = await fetch(url)
+    // const responseText = await response.json()
+    // const healthPoints = responseText.overallPoints;
 }
