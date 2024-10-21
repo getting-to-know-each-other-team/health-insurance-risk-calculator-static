@@ -91,8 +91,7 @@ async function calculateInsurancePoints() {
         method: 'POST',
         header: {'Content-Type': 'application/json'},
         body: JSON.stringify(jsonData)
-    }).then(response => response.json())
-    .then(jsonData => {
+    }).then(response => response.json()).then(jsonData => {
         if (jsonData.overallPoints <= 20) {
             document.getElementById('overall-health-results').innerHTML = 
             `Your health insurance points: ${jsonData.overallPoints}\nYou are at low risk.`
