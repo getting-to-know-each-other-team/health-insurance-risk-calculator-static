@@ -98,7 +98,7 @@ async function calculateInsurancePoints() {
         }
         return response.json()
     })
-    then(jsonData => {
+    .then(jsonData => {
         const overallPoints = jsonData.overallPoints
         if (jsonData.overallPoints <= 20) {
             document.getElementById('overall-health-results').innerHTML = 
