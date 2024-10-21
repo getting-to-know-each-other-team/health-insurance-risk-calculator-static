@@ -90,7 +90,7 @@ async function calculateInsurancePoints() {
     fetch(url, {
         method: 'POST',
         header: {'Content-Type': 'application/json'},
-        body: JSON.stringify(jsonData),
+        body: JSON.stringify(jsonData)
     }).then(response => response.json())
     .then(jsonData => {
         if (jsonData.overallPoints <= 20) {
