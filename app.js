@@ -32,7 +32,7 @@ async function calculateBmi() {
     const responseText = await response.json()
 
     // this will then display the value of the bmi in the html 
-    document.getElementById("bmiResults").innerHTML = responseText.bmiResult
+    document.getElementById("button-results-bmi").value = responseText.bmiResult
 }
 
 async function calculateInsurancePoints() {
@@ -92,4 +92,6 @@ async function calculateInsurancePoints() {
         header: {'Content-Type': 'application/json'},
         body: JSON.stringify(jsonData),
     }).then(response => response.json())
+
+    
 }
